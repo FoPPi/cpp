@@ -19,7 +19,6 @@ bool isNumber(const string& str);
 int main()
 {
     srand(time(NULL));
-    //I LOVE U
 
     system("cls"); //очистить консоль
 

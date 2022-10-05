@@ -13,7 +13,7 @@ using namespace std;
 
 int rnd(int min, int max);
 bool sortByVal(const pair<int, int> &a, const pair<int, int> &b);
-void minde(int counte);
+void mind(int counte);
 bool isNumber(const string& str);
 
 int main()
@@ -44,7 +44,7 @@ int main()
         }
         else if (isNumber(text)) // если в тексте только цыфры
         {
-            minde(stoi(text));
+            mind(stoi(text));
         }
         else
         {
@@ -64,7 +64,7 @@ int main()
 }
 
 
-void minde(int count)
+void mind(int count)
 {
 
     int* arr{ new int[count]};

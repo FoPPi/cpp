@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE); //цвета
 
     
     // you can loop k higher to see more color choices

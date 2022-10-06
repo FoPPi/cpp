@@ -28,11 +28,11 @@ int main()
         cout << "Number:";
         cin >> text;
 
-        if(text == "stop" || text == "s" || text == "exit"  || text == "e") //чел хочет выйти
+        if(text == "stop" || text == "s" || text == "exit"  || text == "e") // чел хочет выйти
         {
             break;
         }
-        else if (isNumber(text)) // если в тексте только цыфры
+        else if (isNumber(text)) // если в тексте только цифры
         {
             if(stod(text) < 0)
             {
@@ -73,7 +73,7 @@ long double Factorial(int num)
 }
 
 
-//провиряем наличия букв
+//проверяем наличия букв
 bool isNumber(const string& str)
 {
     for (char const &c : str) {

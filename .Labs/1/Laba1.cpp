@@ -10,6 +10,8 @@ int main()
 {
     system("cls"); 
 
+
+    //-------------------
     //1
     cout << "#1" << endl;
     cout << "Radius: ";
@@ -22,6 +24,10 @@ int main()
     system("pause");
     system("cls");
 
+
+
+
+    //-------------------
     //2
     cout << "#2" << endl;
     
@@ -42,6 +48,10 @@ int main()
     system("pause");
     system("cls");
 
+
+
+
+    //-------------------
     //3
     cout << "#3" << endl;
 
@@ -67,6 +77,10 @@ int main()
     system("pause");
     system("cls");
 
+
+
+
+    //-------------------
     //4
     cout << "#4" << endl;
 
@@ -85,6 +99,10 @@ int main()
     system("pause");
     system("cls");
 
+
+
+
+    //-------------------
     //5 b
     cout << "#5b" << endl;
 

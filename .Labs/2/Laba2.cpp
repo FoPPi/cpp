@@ -105,6 +105,27 @@ int main()
     system("cls");
 
 
+
+    //-------------------
+    //5
+    cout << "#5" << endl;
+
+    int a = 0, b = 0, c = 0;
+
+    cout << "Enter a: ";
+    cin >> a;
+
+    cout << "Enter b: ";
+    cin >> b;
+
+    cout << "Enter c: ";
+    cin >> c;
+
+    if(a + b > c)
+        cout << "true";
+    else
+        cout << "false";
+
     return 0;
 }
 

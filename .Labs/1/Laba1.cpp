@@ -12,7 +12,7 @@ int main()
 
 
     //-------------------
-    //1
+    // 1
     cout << "#1" << endl;
     cout << "Radius: ";
     int num1 = 0;
@@ -28,7 +28,7 @@ int main()
 
 
     //-------------------
-    //2
+    // 2
     cout << "#2" << endl;
     
     int petroSpent = 0, sergiySpent = 0, katerinaSpent = 0;
@@ -52,8 +52,8 @@ int main()
 
 
     //-------------------
-    //3
-    cout << "#3" << endl;
+    // 3
+    a:cout << "#3" << endl;
 
     cout << "The output should be similar to:" << endl << "hh:mm:ss" << endl;
     
@@ -69,7 +69,29 @@ int main()
 
     int seconds = 0;
 
-    seconds = (arrDate2[0] - arrDate1[0]) * 3600 + (arrDate2[1] - arrDate1[1]) * 60 + (arrDate2[2] - arrDate1[2]);
+    if((arrDate2[0] <= 23 && arrDate1[0] <= 23 && 
+        arrDate2[1] <= 59 && arrDate1[1] <= 59 && 
+        arrDate2[2] <= 59 && arrDate1[2] <= 59)&& 
+       (arrDate2[0] >  00 && arrDate1[0] >  00 && 
+        arrDate2[1] >  00 && arrDate1[1] >  00 && 
+        arrDate2[2] >  00 && arrDate1[2] >  00)  )
+    {
+        if(arrDate2[0] > arrDate1[0] || 
+          (arrDate2[0] == arrDate1[0] && arrDate2[1] > arrDate1[1]) || 
+          (arrDate2[0] == arrDate1[0] && arrDate2[1] == arrDate1[1] && arrDate2[2] > arrDate1[2]))
+        {
+            seconds = (arrDate2[0] - arrDate1[0]) * 3600 + (arrDate2[1] - arrDate1[1]) * 60 + (arrDate2[2] - arrDate1[2]);
+        }
+    }
+    else
+    {
+        cout << "Error!" << endl;
+        system("pause");
+        system("cls");
+        goto a;
+    }
+
+    
 
     cout << "Seconds: " << seconds << endl;
 
@@ -81,7 +103,7 @@ int main()
 
 
     //-------------------
-    //4
+    // 4
     cout << "#4" << endl;
 
     string num4 = "";
@@ -100,10 +122,89 @@ int main()
     system("cls");
 
 
+    //-------------------
+    // 5 a
+    // [WARNING] взято из инета
+    const double PI = 3.1415926535897932384626433832795;
+    double a5,b5,c5,d,p,q,s,f,x1,x2,x3,x2i,x3i;
+
+    cout << "#5a" << endl;
+
+    m:cout << "Enter the coefficients of the cubic equation Ax^3+Bx^2+Cx+D";
+    cout << "A= ";
+    cin >> a5;
+
+    cout << "B= ";
+    cin >> b5;
+    
+    cout << "C= ";
+    cin >> c5;
+
+    cout << "D= ";
+    cin >> d;
+
+    if (a5==0)
+    {
+        cout << "Error!" << endl;
+        goto m;
+    }
+    else
+    {
+        p=((3.*a5*c5-b5*b5)/(3.*a5*a5));
+        q=((2.*b5*b5-9.*a5*b5*c5+27.*a5*a5*d));
+        s=(((q*q)/4.)+(p*p*p)/27.);
+        if (q < 0)
+        {
+            f=(atan(pow(-s,0.5)/(-q/2)));
+        }
+        else if (q > 0)
+        {
+            f=(atan(pow(-s,0.5)/(-q/2))+PI);
+        }
+        else
+        {
+            f=(PI/2);
+        }
+        if (s < 0)
+        {
+            x1=(2.*pow((-p/3.),0.5)*cos(f/3.)-b5/3.*a5);
+            x2=(2.*pow((-p/3.),0.5)*cos(f/3.+(2.*PI)/3.)-b5/3.*a5);
+            x3=(2.*pow((-p/3.),0.5)*cos(f/3.+(2.*PI)/3.)-b5/3.*a5);
+        }
+        else if (s > 0)
+        {
+        x1=(pow(-q/2.+pow(s,0.5),1./3.)+pow(-q/2.-(pow(s,0.5)),1./3.)-b5/(3.*a5));
+            x2=(-0.5*(pow(-q/2.+pow(s,0.5),1./3.)+pow(-q/2.-(pow(s,0.5)),1./3.)-b5/(3.*a5)));
+            x2i=((pow(3.,0.5)/2.)*(pow(-q/2.+(pow(s,0.5)),1./3.)-pow(-q/2.-(pow(s,0.5)),1./3.)));
+            x3=(-0.5*(pow(-q/2+pow(s,0.5),1/3)+pow(-q/2-(pow(s,0.5)),1/3)-b5/(3*a5)));
+            x3i=((pow(3.,0.5)/2.)*(pow(-q/2.+(pow(s,0.5)),1./3.)-pow(-q/2.-(pow(s,0.5)),1./3.)));
+        }
+        else
+        {
+            x1=(2.*pow(-q/2.,1./3.)-b5/(3.*a5));
+            x2=(-1.*pow(-q/2.,1./3.)-b5/(3.*a5));
+            x3=(-1.*pow(-q/2.,1./3.)-b5/(3.*a5));
+        }
+        cout << "Х1= " << x1 << endl;
+        if (s > 0)
+        {
+            cout << "X2= " << x2 << "+" << x2i << "i" << endl;
+            cout << "X3= " << x3 << "-" << x3i << "i" << endl;
+        }
+        else
+        {
+        cout << "X2= " << x2 << endl;
+        cout << "X3= " << x3 << endl;
+        }
+    }
+    cout << "\n";
+    system("pause");
+    system("cls");
+
 
 
     //-------------------
-    //5 b
+    // 5 b
     cout << "#5b" << endl;
 
     double a = 0 , b = 0, c = 0;
@@ -129,7 +230,6 @@ int main()
 
 int* strToTime(string s, string delimiter){
     
-    size_t pos = 0;
     int* arr{ new int[3]}; 
     int i = 0;
     

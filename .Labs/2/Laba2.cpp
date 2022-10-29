@@ -13,7 +13,7 @@ int main()
     system("cls"); 
 
     //-------------------
-    //1
+    // 1
     cout << "#1" << endl;
 
     string text1;
@@ -40,7 +40,7 @@ int main()
 
 
     //-------------------
-    //2
+    // 2
     cout << "#2" << endl;
 
     string text2;
@@ -62,7 +62,7 @@ int main()
 
 
     //-------------------
-    //3
+    // 3
     cout << "#3" << endl;
 
     int price = 0;
@@ -70,12 +70,14 @@ int main()
     cin >> price;
 
     int tax = 0;
-    if(price < 1000)
-        tax = price * 2 / 100;
-    else if(price >= 1000 && price < 10000)
-        tax = price * 3 / 100;
-    else if (price >= 10000)
-        tax = price * 5 / 100;
+    if(price > 0) {
+        if(price < 1000)
+            tax = price * 2 / 100;
+        else if(price >= 1000 && price < 10000)
+            tax = price * 3 / 100;
+        else if (price >= 10000)
+            tax = price * 5 / 100;
+    }
 
     cout << "Tax: " << tax;
 
@@ -86,7 +88,7 @@ int main()
 
 
     //-------------------
-    //4
+    // 4
     cout << "#4" << endl;
 
     int x = 0;
@@ -107,7 +109,7 @@ int main()
 
 
     //-------------------
-    //5
+    // 5
     cout << "#5" << endl;
 
     int a = 0, b = 0, c = 0;

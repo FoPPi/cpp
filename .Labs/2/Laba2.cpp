@@ -84,21 +84,26 @@ void Task2(){
 // Все, що більше 10000 грн., податок – 5%.
 //Необхідно розрахувати суму податку в залежності від вартості
 void Task3(){
-    cout << "#3" << endl;
+    a:cout << "#3" << endl;
 
-    int price = 0;
+    double price = 0;
     cout << "Product price: ";
     cin >> price;
 
-    int tax = 0;
-    if(price > 0) {
-        if(price < 1000)
-            tax = price * 2 / 100;
-        else if(price >= 1000 && price < 10000)
-            tax = price * 3 / 100;
-        else if (price >= 10000)
-            tax = price * 5 / 100;
+    double tax = 0;
+    if(price <= 0){
+        cout << "Error!" << endl;
+        system("pause");
+        system("cls");
+        goto a;
     }
+    else if(price < 1000)
+        tax = price * 2 / 100;
+    else if(price >= 1000 && price < 10000)
+        tax = price * 3 / 100;
+    else if (price >= 10000)
+        tax = price * 5 / 100;
+    
 
     cout << "Tax: " << tax;
 

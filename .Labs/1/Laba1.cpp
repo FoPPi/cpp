@@ -10,7 +10,7 @@ int* strToTime(string s, string delimiter);
 
 int main()
 {
-    system("cls"); 
+    system("clear"); //system("cls");
 
 
     Task1();
@@ -40,8 +40,8 @@ void Task1(){
     cout << "S: " << 3.141 * pow(num1, 2) << endl;
 
     cout << "\n";
-    system("pause");
-    system("cls");
+    cin.ignore().get(); //system("pause");
+    system("clear"); //system("cls");
 }
 
 
@@ -65,8 +65,8 @@ void Task2(){
             "Katya: " << katerinaSpent << endl;
 
     cout << "\n";
-    system("pause");
-    system("cls");
+    cin.ignore().get(); //system("pause");
+    system("clear"); //system("cls");
 }
 
 
@@ -107,8 +107,8 @@ void Task3(){
     else
     {
         cout << "Error!" << endl;
-        system("pause");
-        system("cls");
+        cin.ignore().get(); //system("pause");
+        system("clear"); //system("cls");
         goto a;
     }
 
@@ -117,8 +117,8 @@ void Task3(){
     cout << "Seconds: " << seconds << endl;
 
     cout << "\n";
-    system("pause");
-    system("cls");
+    cin.ignore().get(); //system("pause");
+    system("clear"); //system("cls");
 
 }
 
@@ -139,8 +139,8 @@ void Task4(){
     cout << "Count: " << count << endl;
 
     cout << "\n";
-    system("pause");
-    system("cls");
+    cin.ignore().get(); //system("pause");
+    system("clear"); //system("cls");
 }
 
 
@@ -221,8 +221,8 @@ void Task5a(){
         }
     }
     cout << "\n";
-    system("pause");
-    system("cls");
+    cin.ignore().get(); //system("pause");
+    system("clear"); //system("cls");
 }
 
 void Task5b(){
@@ -242,8 +242,8 @@ void Task5b(){
     cout << "F = " << tan(a) - abs(b - 3 * a + 2 / cbrt(a + 4));
 
     cout << "\n";
-    system("pause");
-    system("cls");
+    cin.ignore().get(); //system("pause");
+    system("clear"); //system("cls");
 }
 
 

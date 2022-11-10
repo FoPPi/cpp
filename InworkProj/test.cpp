@@ -1,28 +1,19 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include <windows.h>
-#include <conio.h>
-
 using namespace std;
 
 
-string NumToText(int num);
+string NumToText(long num);
 bool isNumber(const string& str);
-list<int> spitnum(int num);
+list<int> spitnum(long num);
 
 int main()
 {
-    system("cls"); 
+    system("clear"); //system("cls");
 
-
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE); //цвета
-
-    SetConsoleTextAttribute(hConsole, 3); // ставим голубой цвет
 
     cout << "If u want exit write \"exit\" or \"e\"" << endl; 
-
-    SetConsoleTextAttribute(hConsole, 7); // ставим обычный цвет
 
     string text = "";
     while (true)
@@ -32,6 +23,7 @@ int main()
 
         if(text == "stop" || text == "s" || text == "exit"  || text == "e") // чел хочет выйти
         {
+            cout << "Bye" << endl;
             break;
         }
         else if (isNumber(text)) // если в тексте только цифры
@@ -40,20 +32,16 @@ int main()
         }
         else
         {
-            SetConsoleTextAttribute(hConsole, 12);
-
             cout << "Pls enter number" << endl;
-
-            SetConsoleTextAttribute(hConsole, 7);
         }
 
-        getch(); //wait без текста
-        system("cls"); //очистить консоль
+        cin.ignore().get(); //system("pause");
+        system("clear"); //system("cls");
     }
 
     cout << "\n";
-    system("pause");
-    system("cls");
+    cin.ignore().get(); //system("pause");
+    system("clear"); //system("cls");
 
     return 0;
 }

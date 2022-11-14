@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include <map>
+
 using namespace std;
 
 
@@ -61,15 +63,12 @@ bool isNumber(const string& str)
 string NumToText(long num){
 
     //73456 | seventy-three thousand four hundred fifty-six
-    string numbers0_9[]   = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-    string numbers10_19[] = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
-    string numbers20_90[] = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
-    string numbers_hundred_billion[] = {"hundred", "thousand", "million", "billion"};
+    
     string text = "";
 
     list<int> listNums = spitnum(num);
 
-    switch (to_string(num).length() / 3)
+    switch (listNums.size())
     {
         case 4:
             /* code */
@@ -81,6 +80,9 @@ string NumToText(long num){
             /* code */
             break;
         case 1:
+            /* code */
+            break;
+        case 0:
             /* code */
             break;
         default:
@@ -110,4 +112,24 @@ list<int> spitnum(long num){
 
 
     return numsBy3;
+}
+
+
+void mind(list<int> listNums){
+    map<int, string> numbers0_9 {
+                                 {0, "zero"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}, {6, "six"}, {7, "seven"}, {8, "eight"}, {9, "nine"},
+                                 {10, "ten"}, {11, "eleven"}, {12, "twelve"}, {13, "thirteen"}, {14, "fourteen"}, {15, "fifteen"}, {16, "sixteen"}, {17, "seventeen"}, {18, "eighteen"}, {19, "nineteen"},
+                                 {20, "twenty"}, {30, "thirty"}, {40, "forty"}, {50, "fifty"}, {60, "sixty"}, {70, "seventy"}, {80, "eighty"}, {90, "ninety"},
+                                };
+    string numbers_hundred_billion[] = {"hundred", "thousand", "million", "billion"};
+
+
+    
+    for (auto num : listNums){
+        int numLenght = to_string(num).length();
+
+        if()
+
+    }
+
 }

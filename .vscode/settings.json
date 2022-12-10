@@ -4,6 +4,8 @@
         "string": "cpp",
         "xutility": "cpp",
         "iostream": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "ostream": "cpp",
+        "istream": "cpp"
     }
 }

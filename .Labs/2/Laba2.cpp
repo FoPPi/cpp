@@ -49,6 +49,7 @@ void Task1(){
 
     cout << "Max: " << max << endl; 
 
+
     cout << "\n";
     system("pause");
     system("cls");

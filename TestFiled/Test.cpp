@@ -64,8 +64,6 @@ int main()
     // }
     // cout << sum << endl;
 
-    
-
     cout << "\n";
     cin.ignore().get(); //system("pause");
     system("clear"); //system("cls");

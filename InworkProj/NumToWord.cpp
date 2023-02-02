@@ -1,18 +1,15 @@
 #include <iostream>
 #include <string>
-#include <list>
-#include <map>
 
 using namespace std;
 
 
-string NumToText(long num);
+string convertNumberToWord(long number);
 bool isNumber(const string& str);
-list<int> spitnum(long num);
 
 int main()
 {
-    system("clear"); //system("cls");
+    system("cls"); //system("cls");
 
 
     cout << "If u want exit write \"exit\" or \"e\"" << endl; 
@@ -30,7 +27,7 @@ int main()
         }
         else if (isNumber(text)) // если в тексте только цифры
         {
-            cout << NumToText(stoi(text)) << endl;
+            cout << convertNumberToWord(stoi(text)) << endl;
         }
         else
         {
@@ -38,12 +35,12 @@ int main()
         }
 
         cin.ignore().get(); //system("pause");
-        system("clear"); //system("cls");
+        system("cls"); //system("cls");
     }
 
     cout << "\n";
     cin.ignore().get(); //system("pause");
-    system("clear"); //system("cls");
+    system("cls"); //system("cls");
 
     return 0;
 }
@@ -60,76 +57,21 @@ bool isNumber(const string& str)
 
 // https://www.dcode.fr/writing-number-letters
 
-string NumToText(long num){
+// Вам нужно использовать функцию для преобразования числа в строку. Затем, Вы 
+// можете разбить число на отдельные цифры и использовать соответствующие слова 
+// для каждой цифры. Вы можете создать массив строк, где каждый элемент массива
+// соответствует соответствующей цифре, и использовать его для получения слова для
+// каждой цифры. Также Вам необходимо реализовать логику для обработки сотен, тысяч 
+// и миллионов.
 
-    //73456 | seventy-three thousand four hundred fifty-six
+string convertNumberToWord(long number) {
+    string ones[] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+    string tens[] = {"ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+    string teens[] = {"eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+
+    string result = "";
     
-    string text = "";
-
-    list<int> listNums = spitnum(num);
-
-    switch (listNums.size())
-    {
-        case 4:
-            /* code */
-            break;
-        case 3:
-            /* code */
-            break;
-        case 2:
-            /* code */
-            break;
-        case 1:
-            /* code */
-            break;
-        case 0:
-            /* code */
-            break;
-        default:
-            /* code */
-            break;
-    }
-
-    return text;
-}
 
 
-list<int> spitnum(long num){
-
-    list<int> numsBy3;
-    
-    string str = to_string(num);
-
-    int start = 0;
-    for (int i = str.length() - 3; i >= 0; i-=3)
-    {
-        numsBy3.push_front(stoi(str.substr(i, 3)));
-        start = i;
-    }
-    if(start != 0)
-        numsBy3.push_front(stoi(str.substr(0, start)));
-
-
-
-    return numsBy3;
-}
-
-
-void mind(list<int> listNums){
-    map<int, string> numbers0_9 {
-                                 {0, "zero"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}, {6, "six"}, {7, "seven"}, {8, "eight"}, {9, "nine"},
-                                 {10, "ten"}, {11, "eleven"}, {12, "twelve"}, {13, "thirteen"}, {14, "fourteen"}, {15, "fifteen"}, {16, "sixteen"}, {17, "seventeen"}, {18, "eighteen"}, {19, "nineteen"},
-                                 {20, "twenty"}, {30, "thirty"}, {40, "forty"}, {50, "fifty"}, {60, "sixty"}, {70, "seventy"}, {80, "eighty"}, {90, "ninety"},
-                                };
-    string numbers_hundred_billion[] = {"hundred", "thousand", "million", "billion"};
-
-
-    
-    for (auto num : listNums){
-        int numLenght = to_string(num).length();
-
-        if()
-
-    }
-
+    return result;
 }

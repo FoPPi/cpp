@@ -1,96 +1,50 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
-struct Worker {
-    int id;
-    int factory;
-    double salary;
-};
-
-int rnd(int min, int max);
-Worker generateWorker(int id);
-void printWorkers(Worker workers[], int n);
-void insertionSort(Worker workers[], int n);
-double calculateTotalSalary(Worker workers[], int n);
-
 int main() {
+    int rows, cols;
 
-    const int N = 9;
-    Worker workers[N];
-    for (int i = 0; i < N; i++) {
-        workers[i] = generateWorker(i+1);
+    cout << "Enter the number of rows: ";
+    cin >> rows;
+
+    cout << "Enter the number of columns: ";
+    cin >> cols;
+
+    int** matrix = new int*[rows];
+
+    for (int i = 0; i < rows; i++) {
+        matrix[i] = new int[cols];
+        for (int j = 0; j < cols; j++) {
+            cout << "Enter element (" << i << ", " << j << "): ";
+            cin >> matrix[i][j];
+        }
     }
 
-    cout << "Without sortinfg" << endl;
+    int count = 0;
+    cout << "Rows with zero elements:" << endl;
 
-    printWorkers(workers, N);
-
-    cout << "\n";
-
-    insertionSort(workers, N);
-
-    cout << "With sortinfg" << endl;
-
-    printWorkers(workers, N);
-
-    cout << "\n";
-
-    cout << "Total Salary: " << calculateTotalSalary(workers, N) << "\n";
-
-    return 0;
-}
-
-int rnd(int min, int max)
-{
-
-    int num = min + rand() % (max - min + 1);
-
-    return num;
-}
-
-Worker generateWorker(int id) {
-    Worker newWorker = {id, rnd(1,10), (double)rnd(2000,10000)};
-    return newWorker;
-}
-
-void printWorkers(Worker workers[], int n) {
-    for (int i = 0; i < n; i++) {
-        cout << "ID - " << workers[i].id << endl;
-        cout << "Factory - " << workers[i].factory << endl;
-        cout << "Salary - " << workers[i].salary << "$" << endl;
-        cout << "\n";
-    }
-}
-
-void insertionSort(Worker workers[], int n) {
-    Worker temp;
-    for (int i = 0; i < n; i++){
-        for (int j = 0; j + 1 < n - i; j++){
-            if (workers[j].salary > workers[j + 1].salary)
-            {
-                temp = workers[j];
-                workers[j] = workers[j + 1];
-                workers[j + 1] = temp;
-            }
-            else if (workers[j].salary == workers[j + 1].salary  &&
-                     workers[j].id > workers[j + 1].id)
-            {
-                temp = workers[j];
-                workers[j] = workers[j + 1];
-                workers[j + 1] = temp;
+    for (int i = 0; i < rows; i++) {
+        bool has_zero = false;
+        for (int j = 0; j < cols; j++) {
+            if (matrix[i][j] == 0) {
+                has_zero = true;
+                break;
             }
         }
-            
-    }
-        
-}
 
-double calculateTotalSalary(Worker workers[], int n) {
-    if (n == 0) {
-        return 0;
-    } else {
-        return calculateTotalSalary(workers, n-1) + workers[n-1].salary;
+        if (has_zero) {
+            count++;
+            cout << i << endl;
+        }
     }
+
+    cout << "Total rows with zero elements: " << count << endl;
+
+    for (int i = 0; i < rows; i++) {
+        delete[] matrix[i];
+    }
+    delete[] matrix;
+
+    return 0;
 }

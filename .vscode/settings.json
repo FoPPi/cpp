@@ -65,6 +65,8 @@
         "optional": "cpp",
         "sstream": "cpp",
         "stop_token": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "deque": "cpp",
+        "stack": "cpp"
     }
 }

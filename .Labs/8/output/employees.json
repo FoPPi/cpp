@@ -1,0 +1,52 @@
+[
+    {
+      "EmployeeId": 1,
+      "LastName": "Ivanov",
+      "Position": "Manager",
+      "DateOfBirth": "01.01.1990",
+      "HireDate": "01.01.2010"
+    },
+    {
+      "EmployeeId": 2,
+      "LastName": "Petrov",
+      "Position": "Engineer",
+      "DateOfBirth": "02.02.1991",
+      "HireDate": "02.02.2011"
+    },
+    {
+      "EmployeeId": 3,
+      "LastName": "Sidorov",
+      "Position": "Accountant",
+      "DateOfBirth": "03.03.1992",
+      "HireDate": "03.03.2012"
+    },
+    {
+      "EmployeeId": 4,
+      "LastName": "Smirnova",
+      "Position": "Administrator",
+      "DateOfBirth": "04.04.1993",
+      "HireDate": "04.04.2013"
+    },
+    {
+      "EmployeeId": 5,
+      "LastName": "Kovalenko",
+      "Position": "Developer",
+      "DateOfBirth": "05.05.1994",
+      "HireDate": "05.05.2014"
+    },
+    {
+      "EmployeeId": 6,
+      "LastName": "Vasilyeva",
+      "Position": "Designer",
+      "DateOfBirth": "06.06.1995",
+      "HireDate": "06.06.2015"
+    },
+    {
+      "EmployeeId": 7,
+      "LastName": "Zaitsev",
+      "Position": "Marketer",
+      "DateOfBirth": "07.07.1996",
+      "HireDate": "07.07.2016"
+    }
+]
+  
